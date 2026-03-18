@@ -59,4 +59,22 @@ class Order:
         print(f"Prepping your {self.qty} x {self.item.name}...")
         for step in self.item.steps:
             print(step)
-    def
+    def receipt(self)
+        #Here I am going to write the code that describes how i have made the text reciept
+        timestamp = datetime.now().strftime("%d-%m-%y_%H-%M-%S")
+        filename = f"receipt_{timestamp}.txt"
+
+        try:
+            with open(filename, "w") as file:
+                file.write("The Oat & Bean Cafe receipt\n")
+                file.write("---------------------------\n")
+                file.write(f"item : {self.qty} x {self.item.name}\n")
+                if self.size:
+                    file.write(f"size: {self.size}\n")
+                file.write(f"price: £{self.item.price * self.qty: .2f}\n")
+                file.write("---------------------------\n")
+                file.write("Thank you so much for purchasing at The Oat & Bean!")
+
+        print(f"\n Receipt has been printed, Thank you!")
+
+        
