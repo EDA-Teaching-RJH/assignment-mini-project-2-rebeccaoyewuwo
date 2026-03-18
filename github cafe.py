@@ -96,4 +96,17 @@ class Cafe:
             r"(?:(small|medium|grande)\s+)?"    #size
             r"(.+?)$"                           #item name
         )
+        match = pattern.match(text)
+        if not match:
+            return None, None, None
         
+        quantity = match.group(1)
+        size = match.group(2)
+        item_name = match.group(3)
+
+        return int(quantity) if quantity else 1, size, item_name.strip()
+    def search_menu(self, pattern):
+        regex = re.compile(pattern, re.IGNORECASE)
+        return [item for item in self.menu if regex.search(item.name)]
+    
+    
