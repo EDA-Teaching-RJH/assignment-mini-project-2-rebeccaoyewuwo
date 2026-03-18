@@ -144,4 +144,15 @@ class Cafe:
             if not re.match(r"^(small|medium|grande)$", size):
                 print("Sorry lovely we only have small, medium and grande sizes.")
                 return
-        
+        order = Order(item, size, qty)
+        order.make()
+        order.receipt()
+        self.inventory.update_stock(item, qty)
+        self.daily_sales.append(order)
+    def find_item(self, item_name)
+        pattern = re.compile(item_name.strip(), re.IGNORECASE)
+        for item in self.menu:
+            if pattern.search(item.name):
+                return item
+        return None
+    
