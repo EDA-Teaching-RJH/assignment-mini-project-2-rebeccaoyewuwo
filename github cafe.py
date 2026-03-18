@@ -116,8 +116,26 @@ class Cafe:
         self.personalities = ["friendly", "grumpy", "shy", "chatty"]
         self.current_personality = None
         
-    def show_menu(self)
+    def show_menu(self):
         print("Here's the menu")
         for item in self.menu:
             print(f"{item.name} - £{item.price} ({item.type})")
     
+    def take_order(self):
+        if self.current_personality is None:
+            self.current_personality = random.choice(self.personalities)
+        print(f"\nA {self.current_personality} customer approaches the counter...")
+
+        choice = input("What would you like to order lovely?")
+        qty, size, item_text = self.parse_order_input(choice)
+        item = self.find__item(item_text)
+        if not item:
+            print("Sorry lovely, that's not on the menu! Please choose something on the menu.")
+            return
+        ok, missing_ingredient = self.inventory.has_ingredients(item)
+        if not ok:
+            print(f"Sorry we are out of {missing_ingredient}. Please choose something else.")
+            return
+        size = None
+        if item.type == "drink":
+            #if the customer chooses the wrong size
