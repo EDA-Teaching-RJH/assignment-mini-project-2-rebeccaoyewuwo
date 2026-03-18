@@ -139,3 +139,9 @@ class Cafe:
         size = None
         if item.type == "drink":
             #if the customer chooses the wrong size
+            if not size:
+                size = input("What size would you like? (small, medium, grande)").lower()
+            if not re.match(r"^(small|medium|grande)$", size):
+                print("Sorry lovely we only have small, medium and grande sizes.")
+                return
+        
