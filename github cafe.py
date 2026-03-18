@@ -109,4 +109,15 @@ class Cafe:
         regex = re.compile(pattern, re.IGNORECASE)
         return [item for item in self.menu if regex.search(item.name)]
     
+    def __init__(self, menu, inventory):
+        self.menu = menu
+        self.inventory = inventory
+        self.daily_sales = []
+        self.personalities = ["friendly", "grumpy", "shy", "chatty"]
+        self.current_personality = None
+        
+    def show_menu(self)
+        print("Here's the menu")
+        for item in self.menu:
+            print(f"{item.name} - £{item.price} ({item.type})")
     
