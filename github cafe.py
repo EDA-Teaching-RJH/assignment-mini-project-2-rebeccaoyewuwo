@@ -77,4 +77,23 @@ class Order:
 
         print(f"\n Receipt has been printed, Thank you!")
 
+class Cafe:
+    def parse_order_input(text):
+        """
+        Extracts quantity, size, and item name from mess customer input.
+        Examples :
+        - '2x large mocha'
+        - 'large latte'
+        - 'matcha grande please'
+        - '3 medium chai latte'
+        -'latte'
+        """
+
+        text = clean_input(text.lower())
+
+        pattern = re.compile(
+            r"^(?:(\d+)\s*x?\s*)?"              #qty like 2x
+            r"(?:(small|medium|grande)\s+)?"    #size
+            r"(.+?)$"                           #item name
+        )
         
