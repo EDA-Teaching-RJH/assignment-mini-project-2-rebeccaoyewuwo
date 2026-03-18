@@ -49,3 +49,14 @@ inventory_stock = {
     "Tuna": 20,
     "Avocado": 20,
 }
+
+class Order:
+    def __init__(self, item, size=None, qty=1):
+        self.item = item
+        self.size = size
+        self.qty = qty
+    def make(self):
+        print(f"Prepping your {self.qty} x {self.item.name}...")
+        for step in self.item.steps:
+            print(step)
+    def
