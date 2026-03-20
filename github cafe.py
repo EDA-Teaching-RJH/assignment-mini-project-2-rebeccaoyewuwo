@@ -159,4 +159,10 @@ class Cafe:
         print ("Showing daily report...")
         total = sum(order.item.price * order.qty for order in self.daily_sales)
         print(f"Total sales: £{total:2f}")
-        
+
+    def show_inventory(self):
+        print("\nCurrent Inventory:")
+        print("-" * 30)
+        for ingredient, amount in self.inventory.stock.items():
+            print(f"{ingredient}: {amount}")
+        print("-" * 30) 
