@@ -172,4 +172,5 @@ class Drink(MenuItem):
         super().__init__(name, price, "drink", ingredients, steps, sizes)
 
 class Food(MenuItem):
-    def
+    def __init__(self, name, price, ingredients, steps):
+        super().__init__(name, price, "food", ingredients, steps, sizes=[])
