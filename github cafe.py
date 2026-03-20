@@ -59,7 +59,7 @@ class Order:
         print(f"Prepping your {self.qty} x {self.item.name}...")
         for step in self.item.steps:
             print(step)
-    def receipt(self)
+    def receipt(self):
         #Here I am going to write the code that describes how i have made the text reciept
         timestamp = datetime.now().strftime("%d-%m-%y_%H-%M-%S")
         filename = f"receipt_{timestamp}.txt"
@@ -155,4 +155,8 @@ class Cafe:
             if pattern.search(item.name):
                 return item
         return None
-    
+    def daily_report(self):
+        print ("Showing daily report...")
+        total = sum(order.item.price * order.qty for order in self.daily_sales)
+        print(f"Total sales: £{total:2f}")
+        
