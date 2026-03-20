@@ -166,3 +166,10 @@ class Cafe:
         for ingredient, amount in self.inventory.stock.items():
             print(f"{ingredient}: {amount}")
         print("-" * 30) 
+
+class Drink(MenuItem):
+    def __init__(self, name, price, ingredients, steps, sizes):
+        super().__init__(name, price, "drink", ingredients, steps, sizes)
+
+class Food(MenuItem):
+    def
