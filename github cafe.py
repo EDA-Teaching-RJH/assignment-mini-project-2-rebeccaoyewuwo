@@ -38,7 +38,6 @@ inventory_stock = {
     "Chocolate Syrup": 50,
     "Mayo": 50,
     "Matcha Powder": 45,
-    "Chai Powder": 45,
     "Cinnamon Powder": 40,
     "Tomato": 40,
     "Lettuce": 40,
@@ -174,3 +173,122 @@ class Drink(MenuItem):
 class Food(MenuItem):
     def __init__(self, name, price, ingredients, steps):
         super().__init__(name, price, "food", ingredients, steps, sizes=[])
+
+menu = [
+    MenuItem(
+        name = "Latte",
+        price = 3.75,
+        item_type = "drink",
+        ingredients = {"Coffee Beans": 3, "Oat Milk": 2, "Cups": 1},
+        steps = [
+            "Grinding Coffee Beans...done!",
+            "Preparing Coffee shot...done!",
+            "Steaming Oat Milk...done!",
+            "Pouring the Oat Milk & Coffee Shot into the cup...done!",
+            "Enjoy your drink!"
+        ],
+        sizes = ["small", "medium", "grande"]
+    ),
+    MenuItem(
+        name = "Mocha",
+        price = 4.30,
+        item_type = "drink",
+        ingredients = {"Coffee Beans": 3, "Chocolate Syrup": 3, "Oat Milk": 2, "Cups": 1},
+        steps = [
+            "Pouring 3 tablespoons of chocolate syrup into the cup...done",
+            "Grinding Coffee Beans...done!",
+            "Preparing Coffee shot...done!",
+            "Steaming Oat Milk...done!",
+            "Pouring the Oat Milk & Coffee Shot into the cup...done!",
+            "Enjoy your drink!"
+        ],
+        sizes = ["small", "medium", "grande"]
+    ),
+        MenuItem(
+        name = "Matcha",
+        price = 4.30,
+        item_type = "drink"
+        ingredients = {"Matcha Powder": 3, "Oat Milk": 2, "Cups": 1},
+        steps = [
+            "Pouring 1 heaping teaspoon of the matcha powder into the steaming cup...done",
+            "Pouring Oat Milk into the steaming jug...done",
+            "Steaming both the milk and powder together...done",
+            "Pouring the mixture into a cup...done",
+            "Enjoy your drink!"
+        ],
+        sizes = ["small", "medium", "grande"]
+    ),
+        MenuItem(
+        name = "Hot Chocolate",
+        price = 4.00,
+        item_type = "drink",
+        ingredients = {"Chocolate Syrup": 3, "Oat Milk": 2, "Cups": 1},
+        steps = [
+            "Pouring 4 tablespoons into the steaming jug...done",
+            "Pouring Oat Milk into the steaming jug..done",
+            "Steaming the mixture...done",
+            "Pouring the mixture into a cup...done",
+            "Enjoy your drink!"
+        ],
+        sizes = ["small", "medium", "grande"]
+    ),
+        MenuItem(
+        name = "Ham & Cheese Sando",
+        price = 5.50,
+        item_type = "food",
+        ingredients = {"Ham": 2, "Cheese": 2, "Bread": 2, "Mayo": 1, "Paper Food Bag": 1},
+        steps = [
+            "Toasting the bread...done",
+            "Squirting the mayo onto the two toasted silces of bread...done",
+            "Adding the ham and cheese...done",
+            "Toasting the sando with the ham & cheese...done",
+            "Putting the sando into the paper food bag...done",
+            "Enjoy the sando!"
+        ],
+        sizes = []
+    ),
+        MenuItem(
+        name = "Vegan BLT",
+        price = 5.75,
+        item_type = "food",
+        ingredients = {"Vegan Ham": 2, "Tomato": 2, "Lettuce": 2, "Bread": 2, "Mayo": 2, "Paper Food Bag": 1},
+        steps = [
+            "Toasting the bread...done",
+            "Squirting the mayo onto the two toasted silces of bread...done",
+            "Adding the vegan ham, tomato and lettuce...done",
+            "Cutting the BLT in half...done",
+            "Putting the sandwich into the paper food bag...done",
+            "Enjoy your sandwich!"
+        ],
+        sizes = []
+    ),
+        MenuItem(
+        name = "Tuna & Egg Sando",
+        price = 5.40,
+        item_type = "food",
+        ingredients = {"Tuna": 2, "Egg": 2, "Bread": 2, "Mayo": 2, "Paper Food Bag": 1},
+        steps = [
+            "Toasting the bread...done",
+            "Squirting the mayo onto the two toasted bread slices...done",
+            "Adding the tuna and egg on the two slices...done",
+            "Putting the sando into the paper food bag...done",
+            "Enjoy your sando!"
+        ],
+        sizes = []
+    ),
+        MenuItem(
+        name = "Avocado & Egg Sando",
+        price = 6.80
+        item_type = "food"
+        ingredients = {"Avocado": 2, "Egg": 2, "Bread": 2, "Mayo": 2, "Tomato": 1, "Lettuce": 1, "Paper Food Bag": 1},
+        steps = [
+            "Toasting the bread...done",
+            "Squirting the mayo onto the two slices of bread...done",
+            "Mashing the avocado and spreading it onto the bread...done",
+            "Adding the egg, tomato and lettuce into the sando...done",
+            "Putting the sandwich into the paper food bag...done",
+            "Enjoy your sando!"
+        ],
+        sizes = []
+    ),
+
