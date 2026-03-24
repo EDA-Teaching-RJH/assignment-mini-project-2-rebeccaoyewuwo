@@ -291,4 +291,17 @@ menu = [
         ],
         sizes = []
     ),
+]
+
+def main():
+    Inventory = inventory(inventory_stock)
+    cafe_instance = cafe(menu, inventory)
+    print("Welcome to The Oat & Bean Cafe!")
+    cafe_instance.show_menu()
+
+    While True: #loops for multiple customers
+        While True:
+            cafe_instance.take_order()
+            again = input ("Is there anything else you would love? (yes/no)")
+            if again
 
