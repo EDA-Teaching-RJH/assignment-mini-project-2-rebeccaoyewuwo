@@ -303,5 +303,17 @@ def main():
         While True:
             cafe_instance.take_order()
             again = input ("Is there anything else you would love? (yes/no)")
-            if again
+            if again.lower() !="yes":
+                cafe_instance.current_personality = None
+                break
+        another_customer = input("\nNew customer coming in? (yes/no)")
+        if another_customer.lower() != "yes":
+            break
+    cafe_instance.daily_report()
+
+    show_inventory = input ("\nWould you like to see the inventory? (yes/no)")
+    if show_inventory.lower() == "yes":
+        cafe_instance.show_inventory()
+
+    print("Thank you so much lovely!")
 
